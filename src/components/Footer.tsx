@@ -2,6 +2,7 @@
 import React from "react";
 import facebook from "../assets/img/facebook.png"; 
 import "../styles/Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -43,7 +44,12 @@ const Footer: React.FC = () => {
           </ul>
         </div>
         <div className="footer-admin">
-          <a href="/celulares" className="admin-link">Admin</a>
+ 
+           <Link to="/admimlog" className="admin-link">
+               Admin
+              </Link>
+
+
         </div>
       </div>
       <div className="footer-bottom">
