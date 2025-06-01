@@ -80,6 +80,7 @@
    TARJETA INDIVIDUAL
 ======================== */
 .phone-card {
+  position: relative;
   background-color: var(--blanco);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
@@ -89,6 +90,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .phone-card:hover {
@@ -102,22 +104,63 @@
   margin-bottom: 10px;
   object-fit: cover;
 }
+.phone-card span { 
+  position: absolute; 
+  top: 10px; 
+  left: 10px; 
+  background-color: #e74c3c; /* Rojo */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
 /* ========================
    INFORMACIÓN DEL TELÉFONO
 ======================== */
+
 .phone-info h2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;        /* Muestra máximo 1 línea */
+  overflow: hidden;
+  text-overflow: ellipsis;     /* Espaciado entre líneas */
   margin: 10px 0 5px;
   color: var(--azul-base);
+  font-size: 1.4em; /* O ajusta tamaño si lo prefieres */
+}
+.phone-info h3 {
+  margin-top:0;
+   color: var(--gris-oscuro); /* Mantén tu color base */
+  font-size: 30px;
 }
 
+
 .phone-info p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  -webkit-line-clamp: 2;        /* Muestra máximo 2 líneas */
+  overflow: hidden;
+  text-overflow: ellipsis;           /* Espaciado entre líneas */
+  word-break: break-word; 
   font-size: 14px;
   color: var(--gris-oscuro);
   margin-bottom: 10px;
 }
-
-.phone-info button {
+.phone-men{
+   display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #2980b9;  /* color azul */
+  border-radius: 12px;         /* bordes redondeados */
+  color: #2980b9;              /* color del texto */
+  font-size: 20px;             /* tamaño de la fuente */
+  font-weight: bold;           /* negrita */
+}
+.phone-btn button {
   background: linear-gradient(to right, #2980b9, #1f6091);
   color: #fff;
   border: none;
@@ -130,12 +173,13 @@
   font-size: 14px;
 }
 
-.phone-info button:hover {
+.phone-btn button:hover {
   background: linear-gradient(to right, #1f6091, #2980b9);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.phone-info button:focus {
+.phone-btn button:focus {
+  
   outline: none;
   box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3);
 }
@@ -193,6 +237,7 @@
   font-size: 1.4em;
   text-align: center;
 }
+
 
 .modal-content p {
   color: var(--gris-oscuro);

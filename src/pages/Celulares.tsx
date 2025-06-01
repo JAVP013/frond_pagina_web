@@ -4,6 +4,7 @@ import axios from "axios";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/celulares.css";
 
+
 interface Phone {
   _id: string;
   brand: string;
@@ -17,7 +18,7 @@ interface Phone {
   imageUrl: string;
 }
 
-const popularBrands = ["Apple", "Samsung", "Huawei", "Xiaomi", "LG"];
+const popularBrands = ["Apple", "Samsung", "Honor", "Xiaomi", "Motorola","ZTE"];
 
 const Celulares: React.FC = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -69,7 +70,7 @@ const Celulares: React.FC = () => {
   useEffect(() => {
     const fetchPhones = async () => {
       try {
-        const response = await axios.get<Phone[]>("https://back-vercel-1.onrender.com/phones");
+        const response = await axios.get<Phone[]>("http://localhost:5000/phones");
         setPhones(response.data);
       } catch (err) {
         console.error(err);
@@ -109,7 +110,7 @@ const Celulares: React.FC = () => {
   const handleDeletePhone = async (phone: Phone) => {
     if (window.confirm(`¿Estás seguro de eliminar ${phone.brand} ${phone.model}?`)) {
       try {
-        await axios.delete(`https://back-vercel-1.onrender.com/phones/${phone._id}`);
+        await axios.delete(`http://localhost:5000/phones/${phone._id}`);
         setPhones(prev => prev.filter(p => p._id !== phone._id));
         window.alert("Teléfono eliminado correctamente");
       } catch (err) {
@@ -148,7 +149,7 @@ const Celulares: React.FC = () => {
     e.preventDefault();
     if (!window.confirm("¿Deseas guardar los cambios?")) return;
     try {
-      await axios.put(`https://back-vercel-1.onrender.com/phones/${editPhone?._id}`, editFields);
+      await axios.put(`http://localhost:5000/phones/${editPhone?._id}`, editFields);
       setPhones(prev =>
         prev.map(p => (p._id === editPhone?._id ? { ...p, ...editFields } : p))
       );
@@ -187,7 +188,7 @@ const Celulares: React.FC = () => {
     e.preventDefault();
     if (!window.confirm("¿Deseas agregar este dispositivo?")) return;
     try {
-      const response = await axios.post("https://back-vercel-1.onrender.com/phones", newDevice);
+      const response = await axios.post("http://localhost:5000/phones", newDevice);
       setPhones(prev => [...prev, response.data]);
       window.alert("Dispositivo agregado correctamente");
       handleCloseAddModal();
@@ -230,7 +231,7 @@ const Celulares: React.FC = () => {
       if (selectedPhone) {
         formData.append("deviceInfo", JSON.stringify(selectedPhone));
       }
-      await axios.post("https://back-vercel-1.onrender.com/email/send-email", formData, {
+      await axios.post("http://localhost:5000/email/send-email", formData, {
         headers: { "Content-Type": "multipart/form-data" }
       });
       alert("Correo enviado con éxito");
@@ -284,13 +285,18 @@ const Celulares: React.FC = () => {
         </button>
       )}
 
-      <div className="phones-grid">
+      <div className ="phones-grid">
         {filteredPhones.map((phone) => (
           <div className="phone-card" key={phone._id}>
+            <span>{phone.brand}</span>
+            <div className="phone-info " title={phone.brand +" "+phone.model}>
             <img src={phone.imageUrl} alt={phone.model} className="phone-image" />
-            <div className="phone-info">
-              <h2>{phone.brand} {phone.model}</h2>
-              <p>Pantalla {phone.size}, {phone.memory}, {phone.cameras}</p>
+              <h2 >{phone.model}</h2> <div className= "phone-men">{phone.memory}</div>
+              <p>Pantalla {phone.size},{phone.cameras} </p>
+              <p style={{textAlign:'left'}}>A solo:</p>
+              <h3>${phone.price}</h3>
+              </div>
+               <div className="phone-btn">
               {isAuthenticated ? (
                 <>
                   <button className="btn-delete" onClick={() => handleDeletePhone(phone)}>
