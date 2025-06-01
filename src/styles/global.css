@@ -1,0 +1,29 @@
+:root {
+  /* Paleta de Colores */
+  --bg-body: #f0f8ff;           /* Fondo: azul muy claro */
+  --azul-base: #2980b9;         /* Azul principal */
+  --azul-hover: #1f6091;        /* Azul para hover */
+  --azul-claro: #85c1e9;        /* Azul suave (para acentos) */
+  --blanco: #ffffff;           /* Blanco */
+  --gris-oscuro: #4a4a4a;       /* Gris oscuro para textos */
+  --gris-claro: #e9ecef;        /* Gris claro para bordes y fondos secundarios */
+  --text-color: #444444;        /* Color base del texto */
+  
+  /* Tipografía */
+  --font-family: "Arial", sans-serif;
+  --font-size-base: 16px;
+
+  --teal-base: #005f74;  /* Un teal oscuro */
+  --teal-hover: #0093af; /* Un teal medio, más cercano al branding */
+  /* Otras variables que uses... */
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-body);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  text-align: center;
+  font-size: var(--font-size-base);
+}

@@ -1,0 +1,340 @@
+/* ========================
+   CONTENEDOR GENERAL
+======================== */
+.celulares-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.celulares-container h1 {
+  margin-bottom: 10px;
+  color: var(--azul-base);
+}
+
+.celulares-container p {
+  font-size: 16px;
+  color: var(--gris-oscuro);
+  margin-bottom: 20px;
+}
+
+/* ========================
+   FILTROS Y BUSCADOR
+======================== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filters input,
+.filters select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border: 1px solid #2980b9;
+}
+
+/* ============================
+   BOTÓN "AGREGAR DISPOSITIVO"
+============================ */
+.btn-add-device {
+  background: linear-gradient(to right, #2980b9, #1f6091);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 16px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-add-device:hover {
+  background: linear-gradient(to right, #1f6091, #2980b9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================
+   GRID DE TELÉFONOS
+======================== */
+.phones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* ========================
+   TARJETA INDIVIDUAL
+======================== */
+.phone-card {
+  background-color: var(--blanco);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phone-card:hover {
+  transform: translateY(-3px);
+}
+
+.phone-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+/* ========================
+   INFORMACIÓN DEL TELÉFONO
+======================== */
+.phone-info h2 {
+  margin: 10px 0 5px;
+  color: var(--azul-base);
+}
+
+.phone-info p {
+  font-size: 14px;
+  color: var(--gris-oscuro);
+  margin-bottom: 10px;
+}
+
+.phone-info button {
+  background: linear-gradient(to right, #2980b9, #1f6091);
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 8px 5px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  font-size: 14px;
+}
+
+.phone-info button:hover {
+  background: linear-gradient(to right, #1f6091, #2980b9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.phone-info button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3);
+}
+
+/* ========================
+   BOTONES ADMIN
+======================== */
+.btn-delete {
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+}
+
+.btn-delete:hover {
+  background: linear-gradient(to right, #c0392b, #e74c3c);
+}
+
+.btn-edit {
+  background: linear-gradient(to right, #f1c40f, #f39c12);
+}
+
+.btn-edit:hover {
+  background: linear-gradient(to right, #f39c12, #f1c40f);
+}
+
+/* ========================
+   MODAL: OVERLAY Y CONTENIDO
+======================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: var(--blanco);
+  border-radius: 8px;
+  padding: 20px 30px;
+  width: 90%;
+  max-width: 450px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: var(--azul-base);
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.modal-content p {
+  color: var(--gris-oscuro);
+  margin-bottom: 15px;
+}
+
+/* ========================
+   FORMULARIOS EN MODAL
+======================== */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--gris-oscuro);
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border: 1px solid #2980b9;
+}
+
+.modal-content form button[type="submit"] {
+  margin-top: 10px;
+  align-self: center;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #2980b9, #1f6091);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content form button[type="submit"]:hover {
+  background: linear-gradient(to right, #1f6091, #2980b9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================
+   PLACEHOLDER EN GRIS
+======================== */
+.modal-content input::placeholder,
+.modal-content select::placeholder,
+.modal-content textarea::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+/* ========================
+   FORMULARIO PARA PDF
+======================== */
+.pdf-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pdf-form label {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--gris-oscuro);
+}
+
+.pdf-form input[type="file"] {
+  margin-bottom: 15px;
+}
+
+.pdf-form button {
+  background: linear-gradient(to right, #2980b9, #1f6091);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdf-form button:hover {
+  background: linear-gradient(to right, #1f6091, #2980b9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3);
+}
+
+/* ========================
+   BOTÓN CERRAR MODAL
+======================== */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.close-btn:hover {
+  background: linear-gradient(to right, #c0392b, #e74c3c);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
+}

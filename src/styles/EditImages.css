@@ -1,0 +1,345 @@
+/* ========================
+   ESTILOS GENERALES
+======================== */
+.edit-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 20px auto;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-title {
+  text-align: center;
+  color: var(--azul-base);
+  margin-bottom: 20px;
+}
+
+.section-title {
+  color: var(--azul-base);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+.loading-message {
+  color: #333;
+  text-align: center;
+}
+
+.divider {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+/* ========================
+   SECCIÓN: EDITAR LOGO
+======================== */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.logo-update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.logo-input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.update-logo-btn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #2980b9, #1f6091);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.update-logo-btn:hover {
+  background: linear-gradient(to right, #1f6091, #2980b9);
+}
+
+/* ========================
+   SECCIÓN: EDITAR CARRUSEL
+======================== */
+.carousel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.carousel-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.carousel-img {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.carousel-url {
+  word-wrap: break-word;
+  max-width: 250px;
+  font-size: 14px;
+  color: #555;
+}
+
+.btn-delete {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-delete:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #c0392b, #e74c3c);
+}
+
+.carousel-add-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.carousel-input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.add-btn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #2980b9, #1f6091);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.add-btn:hover {
+  background: linear-gradient(to right, #1f6091, #2980b9);
+}
+
+@media (max-width: 600px) {
+  .carousel-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* ============================
+   SECCIÓN: IMAGEN "NOSOTROS"
+============================ */
+.company-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.company-update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.company-input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.update-company-btn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #2980b9, #1f6091);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.update-company-btn:hover {
+  background: linear-gradient(to right, #1f6091, #2980b9);
+}
+
+/* =============================
+   SECCIÓN: FORMULARIO UBICACIÓN
+============================= */
+.location-container .form-group {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+.location-container .form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gris-oscuro);
+  margin-bottom: 4px;
+}
+
+.location-container .form-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.update-location-btn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #2980b9, #1f6091);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.update-location-btn:hover {
+  background: linear-gradient(to right, #1f6091, #2980b9);
+}
+
+/* ============================
+   NUEVA SECCIÓN: CRUD SUCURSALES
+============================ */
+.location-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+}
+
+.location-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.location-form button {
+  background: linear-gradient(to right, #2980b9, #1f6091);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.location-form button:hover {
+  background: linear-gradient(to right, #1f6091, #2980b9);
+}
+
+.location-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.location-item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.location-item strong {
+  display: block;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.location-item button {
+  margin-right: 10px;
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.location-item button:first-of-type {
+  background-color: #3498db;
+  color: white;
+}
+
+.location-item button:first-of-type:hover {
+  background-color: #2980b9;
+}
+
+.location-item button:last-of-type {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.location-item button:last-of-type:hover {
+  background-color: #c0392b;
+}

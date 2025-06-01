@@ -1,0 +1,137 @@
+/* Footer.css */
+
+/* Variables de color (puedes definirlas en global.css, pero se incluyen aquí para referencia) */
+:root {
+  --teal-base: #0093af;
+  --teal-hover: #00afc4;
+  --red-accent: #eb1c24;
+  --white: #ffffff;
+  --gray-dark: #444444;
+  --gray-light: #e9ecef;
+}
+
+/* Contenedor principal del footer */
+.footer {
+  background: linear-gradient(to right, var(--teal-base), var(--teal-hover));
+  color: var(--white);
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+/* Contenido interno del footer */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+/* Bloque de marca */
+.footer-brand {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.footer-brand h2 {
+  color: var(--white);
+  margin-bottom: 5px;
+}
+
+.footer-brand p {
+  margin: 0;
+}
+
+/* Bloque de redes sociales (solo se muestra Facebook) */
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.footer-social h3 {
+  color: var(--white);
+  margin-bottom: 5px;
+}
+
+.footer-social ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social li a img {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.footer-social li a img:hover {
+  filter: none;
+}
+
+/* Bloque para el enlace de administración */
+.footer-admin {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.footer-admin .admin-link {
+  color: var(--white);
+  text-decoration: none;
+  background-color: rgba(68, 68, 68, 0.5);
+  padding: 6px 10px;
+  border-radius: 4px;
+  opacity: 0.2;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-admin .admin-link:hover {
+  opacity: 1;
+  background-color: rgba(68, 68, 68, 0.7);
+}
+
+/* Línea inferior del footer */
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.footer-links h3 {
+  color: var(--white);
+  margin-bottom: 5px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--red-accent);
+}

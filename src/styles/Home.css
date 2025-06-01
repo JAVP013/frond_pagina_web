@@ -1,0 +1,48 @@
+/* Home.css */
+
+/* Contenedor principal en Home */
+.container {
+  padding: 20px;
+}
+
+/* Sección "nosotros" */
+.nosotros {
+  background-color: var(--section-bg);
+  border: none;
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 1100px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.nosotros h2, .container h1, .map-container h2 {
+  color: var(--azul-claro);
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+
+.nosotros p, .container p {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Contenedor para la imagen (centrado) */
+.nosotros .image-container {
+  margin: 20px auto 0;
+  max-width: 1000px;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* Imagen responsiva */
+.nosotros .image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
