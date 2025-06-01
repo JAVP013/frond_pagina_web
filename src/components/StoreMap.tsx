@@ -32,7 +32,7 @@ const StoreMap: React.FC = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get<StoreLocation[]>("http://localhost:5000/store-location");
+        const response = await axios.get<StoreLocation[]>("https://back-vercel-1.onrender.com/store-location");
         setLocations(response.data);
       } catch (err) {
         console.error("Error fetching store locations:", err);

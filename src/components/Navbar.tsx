@@ -13,7 +13,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchBrand = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/brand");
+        const response = await axios.get("https://back-vercel-1.onrender.com/brand");
         setBrand(response.data);
       } catch (error) {
         console.error("Error al cargar el logo:", error);

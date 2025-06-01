@@ -69,7 +69,7 @@ const Celulares: React.FC = () => {
   useEffect(() => {
     const fetchPhones = async () => {
       try {
-        const response = await axios.get<Phone[]>("http://localhost:5000/phones");
+        const response = await axios.get<Phone[]>("https://back-vercel-1.onrender.com/phones");
         setPhones(response.data);
       } catch (err) {
         console.error(err);
@@ -109,7 +109,7 @@ const Celulares: React.FC = () => {
   const handleDeletePhone = async (phone: Phone) => {
     if (window.confirm(`¿Estás seguro de eliminar ${phone.brand} ${phone.model}?`)) {
       try {
-        await axios.delete(`http://localhost:5000/phones/${phone._id}`);
+        await axios.delete(`https://back-vercel-1.onrender.com/phones/${phone._id}`);
         setPhones(prev => prev.filter(p => p._id !== phone._id));
         window.alert("Teléfono eliminado correctamente");
       } catch (err) {
@@ -148,7 +148,7 @@ const Celulares: React.FC = () => {
     e.preventDefault();
     if (!window.confirm("¿Deseas guardar los cambios?")) return;
     try {
-      await axios.put(`http://localhost:5000/phones/${editPhone?._id}`, editFields);
+      await axios.put(`https://back-vercel-1.onrender.com/phones/${editPhone?._id}`, editFields);
       setPhones(prev =>
         prev.map(p => (p._id === editPhone?._id ? { ...p, ...editFields } : p))
       );
@@ -187,7 +187,7 @@ const Celulares: React.FC = () => {
     e.preventDefault();
     if (!window.confirm("¿Deseas agregar este dispositivo?")) return;
     try {
-      const response = await axios.post("http://localhost:5000/phones", newDevice);
+      const response = await axios.post("https://back-vercel-1.onrender.com/phones", newDevice);
       setPhones(prev => [...prev, response.data]);
       window.alert("Dispositivo agregado correctamente");
       handleCloseAddModal();
@@ -230,7 +230,7 @@ const Celulares: React.FC = () => {
       if (selectedPhone) {
         formData.append("deviceInfo", JSON.stringify(selectedPhone));
       }
-      await axios.post("http://localhost:5000/email/send-email", formData, {
+      await axios.post("https://back-vercel-1.onrender.com/email/send-email", formData, {
         headers: { "Content-Type": "multipart/form-data" }
       });
       alert("Correo enviado con éxito");

@@ -58,7 +58,7 @@ const EditImages: React.FC = () => {
   const fetchImages = async () => {
     try {
       setLoading(true);
-      const response = await axios.get<CarouselImage[]>("http://localhost:5000/carousel");
+      const response = await axios.get<CarouselImage[]>("https://back-vercel-1.onrender.com/carousel");
       setImages(response.data);
       setError("");
     } catch (err) {
@@ -73,7 +73,7 @@ const EditImages: React.FC = () => {
   const fetchBrand = async () => {
     try {
       setLoading(true);
-      const response = await axios.get<Brand>("http://localhost:5000/brand");
+      const response = await axios.get<Brand>("https://back-vercel-1.onrender.com/brand");
       setBrand(response.data);
       setNewLogoUrl(response.data.logoUrl);
       setError("");
@@ -89,7 +89,7 @@ const EditImages: React.FC = () => {
   const fetchCompanyImage = async () => {
     try {
       setLoading(true);
-      const response = await axios.get<CompanyImage>("http://localhost:5000/company");
+      const response = await axios.get<CompanyImage>("https://back-vercel-1.onrender.com/company");
       setCompanyImage(response.data);
       setNewCompanyImageUrl(response.data.imageUrl);
       setError("");
@@ -105,7 +105,7 @@ const EditImages: React.FC = () => {
    const fetchLocations = async () => {
     try {
       setLoading(true);
-      const response = await axios.get<StoreLocation[]>("http://localhost:5000/store-location");
+      const response = await axios.get<StoreLocation[]>("https://back-vercel-1.onrender.com/store-location");
       setLocations(response.data);
     } catch (err) {
       console.error(err);
@@ -127,7 +127,7 @@ const EditImages: React.FC = () => {
     if (!window.confirm("¿Deseas actualizar el logo?")) return;
     try {
       setLoading(true);
-      const response = await axios.put("http://localhost:5000/brand", { logoUrl: newLogoUrl });
+      const response = await axios.put("https://back-vercel-1.onrender.com/brand", { logoUrl: newLogoUrl });
       setBrand(response.data);
       setError("");
       window.alert("Logo actualizado correctamente");
@@ -150,7 +150,7 @@ const EditImages: React.FC = () => {
     if (!window.confirm("¿Deseas agregar esta imagen al carrusel?")) return;
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:5000/carousel", { imageUrl: newImageUrl });
+      const response = await axios.post("https://back-vercel-1.onrender.com/carousel", { imageUrl: newImageUrl });
       setImages((prev) => [...prev, response.data]);
       setNewImageUrl("");
       setError("");
@@ -169,7 +169,7 @@ const EditImages: React.FC = () => {
     if (!window.confirm("¿Estás seguro de eliminar esta imagen?")) return;
     try {
       setLoading(true);
-      await axios.delete(`http://localhost:5000/carousel/${id}`);
+      await axios.delete(`https://back-vercel-1.onrender.com/carousel/${id}`);
       setImages((prev) => prev.filter((img) => img._id !== id));
       setError("");
       window.alert("Imagen eliminada correctamente");
@@ -187,7 +187,7 @@ const EditImages: React.FC = () => {
     if (!window.confirm("¿Deseas actualizar la imagen de Nosotros?")) return;
     try {
       setLoading(true);
-      const response = await axios.put("http://localhost:5000/company", { imageUrl: newCompanyImageUrl });
+      const response = await axios.put("https://back-vercel-1.onrender.com/company", { imageUrl: newCompanyImageUrl });
       setCompanyImage(response.data);
       setError("");
       window.alert("Imagen de Nosotros actualizada correctamente");
@@ -218,7 +218,7 @@ const EditImages: React.FC = () => {
       setLoading(true);
       if (editingId) {
         // Actualizar
-        const response = await axios.put(`http://localhost:5000/store-location/${editingId}`, {
+        const response = await axios.put(`https://back-vercel-1.onrender.com/store-location/${editingId}`, {
           address,
           latitude: parseFloat(latitude),
           longitude: parseFloat(longitude),
@@ -230,7 +230,7 @@ const EditImages: React.FC = () => {
         setEditingId(null);
       } else {
         // Crear nueva
-        const response = await axios.post("http://localhost:5000/store-location", {
+        const response = await axios.post("https://back-vercel-1.onrender.com/store-location", {
           address,
           latitude: parseFloat(latitude),
           longitude: parseFloat(longitude),
@@ -262,7 +262,7 @@ const EditImages: React.FC = () => {
     if (!window.confirm("¿Estás seguro de eliminar esta sucursal?")) return;
     try {
       setLoading(true);
-      await axios.delete(`http://localhost:5000/store-location/${id}`);
+      await axios.delete(`https://back-vercel-1.onrender.com/store-location/${id}`);
       setLocations((prev) => prev.filter((loc) => loc._id !== id));
     } catch (err) {
       console.error(err);

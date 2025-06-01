@@ -17,7 +17,7 @@ const TestImage: React.FC = () => {
   useEffect(() => {
     const fetchCompany = async () => {
       try {
-        const response = await axios.get<CompanyData>("http://localhost:5000/company");
+        const response = await axios.get<CompanyData>("https://back-vercel-1.onrender.com/company");
         setCompany(response.data);
       } catch (err) {
         console.error("Error al cargar la imagen de la empresa:", err);
