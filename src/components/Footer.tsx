@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
         <div className="footer-admin">
-          <a href="/admimlog" className="admin-link">Admin</a>
+          <a href="/admin/login" className="admin-link">Admin</a>
         </div>
       </div>
       <div className="footer-bottom">
