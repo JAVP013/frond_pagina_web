@@ -110,7 +110,7 @@ const Celulares: React.FC = () => {
   const handleDeletePhone = async (phone: Phone) => {
     if (window.confirm(`¿Estás seguro de eliminar ${phone.brand} ${phone.model}?`)) {
       try {
-        await axios.delete(`https://back-vercel-1.onrender.com//phones/${phone._id}`);
+        await axios.delete(`https://back-vercel-1.onrender.com/phones/${phone._id}`);
         setPhones(prev => prev.filter(p => p._id !== phone._id));
         window.alert("Teléfono eliminado correctamente");
       } catch (err) {
@@ -188,7 +188,7 @@ const Celulares: React.FC = () => {
     e.preventDefault();
     if (!window.confirm("¿Deseas agregar este dispositivo?")) return;
     try {
-      const response = await axios.post("https://back-vercel-1.onrender.com//phones", newDevice);
+      const response = await axios.post("https://back-vercel-1.onrender.com/phones", newDevice);
       setPhones(prev => [...prev, response.data]);
       window.alert("Dispositivo agregado correctamente");
       handleCloseAddModal();
@@ -231,7 +231,7 @@ const Celulares: React.FC = () => {
       if (selectedPhone) {
         formData.append("deviceInfo", JSON.stringify(selectedPhone));
       }
-      await axios.post("https://back-vercel-1.onrender.com//email/send-email", formData, {
+      await axios.post("https://back-vercel-1.onrender.com/email/send-email", formData, {
         headers: { "Content-Type": "multipart/form-data" }
       });
       alert("Correo enviado con éxito");
