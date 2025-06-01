@@ -16,7 +16,7 @@ const Carousel = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get<CarouselImage[]>("http://localhost:5000/carousel");
+        const response = await axios.get<CarouselImage[]>("https://back-vercel-1.onrender.com/carousel");
         setImages(response.data);
       } catch (error) {
         console.error("Error al cargar carousel:", error);
