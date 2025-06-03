@@ -9,6 +9,11 @@ Este proyecto es un frontend desarrollado con TypeScript y Vite, diseñado para 
 - Diaz Caneles Jose Lino  
 - Cesar Uriel Hernández Rodríguez  
 
+## Video y Documentación 
+- https://drive.google.com/file/d/1SnySuMXCibuVNTP7bj2uh6w67VvHF4jY/view?usp=drivesdk
+- https://docs.google.com/document/d/1lOqmcndXKSE63wq_nXnjxkRrRUrUCOLeuiNXs3ORjCE/edit?usp=drivesdk
+
+
 ## Tecnologías y herramientas  
 - TypeScript  
 - Vite  
@@ -28,8 +33,7 @@ git clone <URL_DEL_REPOSITORIO>
 
 2. Entrar a la carpeta del proyecto:
 
-bash
-Copiar código
+
 cd frond_pagina_web
 
 
